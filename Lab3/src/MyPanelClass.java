@@ -26,7 +26,7 @@ public class MyPanelClass extends JPanel{
         int height = y2 - y1;
 
         //Paint the background
-        g.setColor(Color.BLUE);
+        g.setColor(Color.RED);
         g.fillRect(x1, y1, width + 1, height + 1);
         
         //Draw a border
@@ -40,9 +40,11 @@ public class MyPanelClass extends JPanel{
 //        g.setColor(Color.MAGENTA);
 //        g.drawLine(x2, y1, x1, y2);
         
+        //Oval
 //        g.setColor(Color.LIGHT_GRAY);
 //        g.fillOval(x2/2 - 55/2, y2/2 - 55/2, 55, 55);
         
+        //Arrow
 //        Polygon p = new Polygon();
 //        p.addPoint(x1 + 5, y1 + 25);
 //        p.addPoint(x1 + 20, y1 + 10);
@@ -54,19 +56,34 @@ public class MyPanelClass extends JPanel{
 //        g.setColor(Color.YELLOW);
 //        g.fillPolygon(p);
         
-        Polygon p2 = new Polygon();
-        p2.addPoint(x1 + 25, y1 + 73);
-        p2.addPoint(x1 + 41, y1 + 73);
-        p2.addPoint(x1 + 47, y1 + 58);
-        p2.addPoint(x1 + 53, y1 + 73);
-        p2.addPoint(x1 + 69, y1 + 73);
-        p2.addPoint(x1 + 56, y1 + 83);
-        p2.addPoint(x1 + 61, y1 + 98);
-        p2.addPoint(x1 + 47, y1 + 88);
-        p2.addPoint(x1 + 34, y1 + 98);
-        p2.addPoint(x1 + 38, y1 + 83);
+        //Draw flag white stripes
         g.setColor(Color.WHITE);
-        g.drawPolygon(p2);
+        g.fillRect(x1, y1 + 40, x2 + 1, 40);
+        g.fillRect(x1, y1 + 120, x2 + 1, 40);
+
+        //Draw flag triangle
+        Polygon triangle = new Polygon();
+        triangle.addPoint(x1, y1);
+        triangle.addPoint(x1 + 115, y2/2);
+        triangle.addPoint(x1, y2);
+        g.setColor(Color.BLUE);
+        g.fillPolygon(triangle);
+
+        //Draw flag star
+        Polygon star = new Polygon();
+        star.addPoint(x1 + 25, y1 + 93);
+        star.addPoint(x1 + 41, y1 + 93);
+        star.addPoint(x1 + 47, y1 + 78);
+        star.addPoint(x1 + 53, y1 + 93);
+        star.addPoint(x1 + 69, y1 + 93);
+        star.addPoint(x1 + 56, y1 + 103);
+        star.addPoint(x1 + 61, y1 + 118);
+        star.addPoint(x1 + 47, y1 + 108);
+        star.addPoint(x1 + 34, y1 + 118);
+        star.addPoint(x1 + 38, y1 + 103);
+        g.setColor(Color.WHITE);
+        g.fillPolygon(star);
+
 
     }
 	
